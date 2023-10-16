@@ -10,7 +10,7 @@ resources:
   gpu_list:
   - vendor: NVIDIA
     mode: PASSTHROUGH_COMPUTE
-    device_id: 8433
+    device_id: 9654
   disk_list:
   - data_source_reference:
       kind: image

@@ -12,7 +12,7 @@ project_root = Path(__file__).parent.parent.parent.parent.parent
 ACCOUNT_NAME="NTNX_LOCAL_AZ"
 
 #bp_root_folder = Path(__file__).parent.parent
-bp_root_folder = "/nai-llm"
+bp_root_folder = "/nai-bp"
 
 TSHIRT_SPEC_PATH = (f"{bp_root_folder}/tshirt-specs/tshirt_specs.yaml")
 TSHIRT_SPECS = yaml.safe_load(read_file(TSHIRT_SPEC_PATH, depth=3))
@@ -114,7 +114,7 @@ class Common(Profile):
     NFS_PATH = CalmVariable.Simple("",label="NFS Share Path",regex="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}:(\/[a-zA-Z0-9_-]+)+$",validate_regex=True,is_mandatory=True,is_hidden=False,runtime=True,description="Enter the path to your IP NFS share.  For example 10.10.10.10:/sharename")
     WORKER = CalmVariable.Simple("1",label="",is_mandatory=False,is_hidden=False,runtime=True,description="")
     NVIDIA_DRIVER_VERSION = CalmVariable.WithOptions.Predefined.string(["515.86.01"],label="Please select the NVidia driver version to be used.",default="515.86.01",is_mandatory=True,is_hidden=False,runtime=True,description="",)
-    NAI_LLM_REVISION = CalmVariable.WithOptions.Predefined.string(["0.1"],label="NAI LLM Revision.",default="0.1",is_mandatory=True,is_hidden=False,runtime=True,description="",)
+    NAI_LLM_REVISION = CalmVariable.WithOptions.Predefined.string(["0.1","0.2-rc1"],label="NAI LLM Revision.",default="0.2-rc1",is_mandatory=True,is_hidden=False,runtime=True,description="",)
     
     @action
     def AIStartInferenceService(name="AI Start Inference Service"):
