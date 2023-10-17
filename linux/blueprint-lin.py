@@ -75,6 +75,7 @@ class VM_Provision(Service):
         CalmTask.Exec.ssh(name="setup",filename=INSTALL_SCRIPTS_DIRECTORY + "/setup.sh",target=ref(VM_Provision),)
         CalmTask.Exec.ssh(name="validate driver",filename=INSTALL_SCRIPTS_DIRECTORY + "/validate_driver.sh",target=ref(VM_Provision),)
         CalmTask.Exec.ssh(name="nai setup",filename=INSTALL_SCRIPTS_DIRECTORY + "/nai_llm.sh",target=ref(VM_Provision),)
+        CalmTask.Exec.ssh(name="demo app",filename=INSTALL_SCRIPTS_DIRECTORY + "/demo_app.sh",target=ref(VM_Provision),)
         
 
 class AHVVM_Default(Substrate):
