@@ -21,11 +21,11 @@ INSTALL_SCRIPTS_DIRECTORY = f"{COMMON_TASK_LIBRARY}/install"
 DAY2_SCRIPTS_DIRECTORY = f"{COMMON_TASK_LIBRARY}/day-two"
 
 #print('bp name is {}'.format(bp["name"]))
-subnet_name = "Primary"
+subnet_name = "vlan.187"
 #print('subnet is {}'.format(subnet_name))
-cluster_name = "DM3-POC127"
+cluster_name = "blaze02"
 #print('cluster is {}'.format(cluster_name))
-image_name = "ubuntu-22.04.1-100Gb"
+image_name = "ubuntu-23.10-100Gb"
 #print('image is {}'.format(image_name))
 AHVProvider = get_provider("AHV_VM")
 ApiObj = AHVProvider.get_api_obj()
@@ -115,7 +115,7 @@ class Common(Profile):
     NFS_PATH = CalmVariable.Simple("",label="NFS Share Path",regex="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}:(\/[a-zA-Z0-9_-]+)+$",validate_regex=True,is_mandatory=True,is_hidden=False,runtime=True,description="Enter the path to your IP NFS share.  For example 10.10.10.10:/sharename")
     WORKER = CalmVariable.Simple("1",label="",is_mandatory=False,is_hidden=False,runtime=True,description="")
     NVIDIA_DRIVER_VERSION = CalmVariable.WithOptions.Predefined.string(["515.86.01"],label="Please select the NVidia driver version to be used.",default="515.86.01",is_mandatory=True,is_hidden=False,runtime=True,description="",)
-    NAI_LLM_REVISION = CalmVariable.WithOptions.Predefined.string(["0.1","0.2-rc1"],label="NAI LLM Revision.",default="0.2-rc1",is_mandatory=True,is_hidden=False,runtime=True,description="",)
+    NAI_LLM_REVISION = CalmVariable.WithOptions.Predefined.string(["0.3","0.3.1-rc1"],label="NAI LLM Revision.",default="0.3",is_mandatory=True,is_hidden=False,runtime=True,description="",)
     
     @action
     def AIStartInferenceService(name="AI Start Inference Service"):
